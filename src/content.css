@@ -1,0 +1,13 @@
+.censored-blur {
+  filter: blur(8px) !important;
+  cursor: not-allowed;
+  transition: filter 0.3s ease;
+}
+
+.censored-blur:hover {
+  filter: blur(2px) !important; /* Partial reveal on hover */
+}
+
+.censored-image {
+  filter: blur(12px) brightness(0.5) !important;
+}

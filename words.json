@@ -1,0 +1,5 @@
+{
+  "en": ["shit", "fuck", "asshole" , "jewish"],
+  "hi": ["गाली", "मूर्ख", "चूतिया"],
+"regex": ["\\b(idiots?|morons?)\\b", "\\b(बेवकूफ|नालायक)\\b"]
+}

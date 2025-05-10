@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Smart Censor",
+  "name": "Content moderation system",
   "version": "1.0",
   "permissions": ["storage", "activeTab","scripting"],
   "host_permissions": ["<all_urls>"],
-  "description": "Blurs profanity/explicit content",
+  "description": "This extension is a content moderation system that detects and filters out hate speech, sexual vulgarity, and appearance hate in real-time. It uses a set of predefined patterns and rules to identify offensive content and provides options for users to customize their experience. The extension also includes a popup interface for easy access to settings and options.",
+
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -17,10 +18,15 @@
     "all_frames": true,
     "run_at": "document_start"
   }],
-  "web_accessible_resources": [{
-    "resources": ["inject.js", "words.json"],
-    "matches": ["<all_urls>"]
-  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js", "words.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "action": {
     "default_popup": "src/popup/popup.html"
   },

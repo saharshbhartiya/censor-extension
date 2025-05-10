@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Censor Extension Settings</title>
-  <link rel="stylesheet" href="../assets/styles.css"> <!-- Shared CSS -->
-  <link rel="stylesheet" href="options.css"> <!-- Local CSS -->
+
+<!-- Link to external stylesheet for styling the options page -->
+<link rel="stylesheet" href="options.css" />
+
 </head>
+
+<!-- Title of the options page -->
 <body>
-  <div class="settings-container">
-    <h1>Content Filtering Settings</h1>
-    
-    <!-- Toggle Filters -->
-    <div class="setting-group">
-      <label>
-        <input type="checkbox" id="toggleText"> Enable Text Filtering
-      </label>
-    </div>
+  <h2>Smart Censor Settings</h2>
 
-    <div class="setting-group">
-      <label>
-        <input type="checkbox" id="toggleImages"> Enable Image Blurring
-      </label>
-    </div>
+  <!-- Toggle to enable or disable censorship functionality -->
 
-    <!-- Profanity Level Slider -->
-    <div class="setting-group">
-      <label for="sensitivity">Sensitivity:</label>
-      <input type="range" id="sensitivity" min="1" max="5" value="3">
-      <span id="sensitivity-value">3</span>
-    </div>
+  <label>
+    <input type="checkbox" id="enableCensor" />
+    Enable Censorship
+  </label>
 
-    <!-- Custom Word List -->
-    <div class="setting-group">
-      <label for="customWords">Block Additional Words (comma-separated):</label>
-      <textarea id="customWords" rows="3"></textarea>
-    </div>
+  <!-- Dropdown to select how censored words should be handled -->
+  <label>
+    Blur Style:
+    <select id="blurStyle">
 
-    <button id="save">Save Settings</button>
-    <p id="status"></p>
-  </div>
+      <!-- Visually blur the word -->
+      <option value="blur">Blur</option>     
+      
+      <!-- Replace the word with asterisks -->
+      <option value="replace">Replace with ***</option>
+
+      <!-- Completely remove the word -->
+      <option value="remove">Remove words</option>
+    </select>
+  </label>
+
+<!-- Input field for user-defined custom words to be censored (comma separated) -->
+  <label>
+    Custom Words to Blur (comma separated):<br />
+    <input type="text" id="customWords" style="width: 100%;" placeholder="e.g., foo,bar,baz" />
+  </label>
+
+  <!-- Button to save the settings -->
+  <button id="save">Save Settings</button>
+
+  <!-- Script that handles loading and saving the settings -->
   <script src="options.js"></script>
 </body>
 </html>

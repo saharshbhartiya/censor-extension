@@ -1,5 +1,45 @@
-{
-  "en": ["shit", "fuck", "asshole" , "jewish"],
-  "hi": ["गाली", "मूर्ख", "चूतिया"],
-"regex": ["\\b(idiots?|morons?)\\b", "\\b(बेवकूफ|नालायक)\\b"]
+ {
+  "categories": {
+    "racist_hate": {
+      "en": [
+        "\\b(black|white|brown)\\s+(bastard|bitch|dog|trash|scum)\\b",
+        "\\b(nigg(a|er)|chink|spic|kike)\\b",
+        "\\b(asians?|jews?|muslims)\\s+(ruin|destroy)\\b",
+        "\\b(monkey|ape)\\s+(face|looking)\\b"
+      ]
+    },
+    "sexual_vulgar": {
+      "en": [
+        "\\b(whore|slut|rape)\\b",
+        "\\b(fuck|shit|asshole|dick|pussy)\\b",
+        "\\b(tits|boobs|blowjob|penis)\\b"
+      ]
+    },
+    "appearance_hate": {
+      "en": [
+        "\\b(fat|ugly|skinny)\\s+(pig|whale|bitch)\\b",
+        "\\b(short\\s+(man|boy)\\b|midget|dwarf\\b)"
+      ]
+    },
+    "context_safe": {
+      "exclude": [
+        "black\\s+(cat|coffee|shirt|hole|and\\s+white)",
+        "white\\s+(house|shirt|flower|board)",
+        "fat\\s+(content|stack|chance|salary)",
+        "asian\\s+(food|cuisine|market)"
+      ]
+    },
+    "intentional_bypass": {
+      "patterns": [
+        "\\b[f@][u*][cⓒ]k\\b",
+        "\\b5h1t|\\$h!t\\b",
+        "\\ba\\s*\\\\\\*\\s*hole\\b"
+      ]
+    }
+  },
+  "config": {
+    "flags": "gi",
+    "exclude_flags": "i",
+    "min_word_length": 3
+  }
 }

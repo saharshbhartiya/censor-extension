@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Censor Controls</title>
-  <style>
-    body {
-      width: 200px;
-      padding: 10px;
-      font-family: Arial, sans-serif;
-    }
-    button {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-      background: #4285f4;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  <title>Smart Censor</title>
+
+  <!-- add styling file for the popup -->
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <h3>Smart Censor</h3>
-  <button id="toggleCensor">Toggle Censorship</button>
-  <button id="openOptions">Settings</button>
+
+  <!-- toggle for enabling/disabling the censorship -->
+  <label>
+    <input type="checkbox" id="popup-enable" />
+    Enable Censorship
+  </label>
+
+  <!-- displays current blur style -->
+  <p><strong>Blur Style:</strong> <span id="popup-style">-</span></p>
+
+  <!-- displays custom words (if any) -->
+  <p><strong>Custom Words:</strong> <span id="popup-words">-</span></p>
+
+  <!-- opens the full settings page -->
+  <button id="open-options">Open Settings</button>
+
+  <!-- script to handle popup logic -->
   <script src="popup.js"></script>
 </body>
 </html>

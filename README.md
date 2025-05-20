@@ -54,7 +54,6 @@ censor-extension/
 - Image content detection (future)
 - Per-site settings
 - Import/export custom word lists
-- Meta platforms are not opening when extension is on (e.g., Instagram , Facebook)
 
 ##   License
 
